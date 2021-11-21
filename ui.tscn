@@ -1,0 +1,379 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://ui.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.313726 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.313726 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.156863 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.235294 )
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+self_modulate = Color( 0, 0, 0, 0.282353 )
+margin_right = 14.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 275.0
+margin_bottom = 357.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+margin_right = 268.0
+margin_bottom = 350.0
+
+[node name="Size" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_right = 268.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Size"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Size"
+
+[node name="SizeX" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Size"]
+margin_left = 116.0
+margin_right = 190.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 1000.0
+value = 400.0
+
+[node name="SizeY" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Size"]
+margin_left = 194.0
+margin_right = 268.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 1000.0
+value = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subdivide" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 268.0
+margin_bottom = 52.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Subdivide"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Subdivide"
+
+[node name="SubdivideX" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Subdivide"]
+margin_left = 116.0
+margin_right = 190.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 800.0
+value = 200.0
+
+[node name="SubdivideY" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Subdivide"]
+margin_left = 194.0
+margin_right = 268.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 800.0
+value = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterSubdivide" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 268.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/WaterSubdivide"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "WaterSubdivide"
+
+[node name="SubdivideX" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/WaterSubdivide"]
+margin_left = 116.0
+margin_right = 190.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 400.0
+value = 80.0
+
+[node name="SubdivideY" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/WaterSubdivide"]
+margin_left = 194.0
+margin_right = 268.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 80.0
+value = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoiseSeed" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 268.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseSeed"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "NoiseSeed"
+
+[node name="NoiseSeed" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseSeed"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 100000.0
+value = 1000.0
+
+[node name="NoiseLacunarity" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 268.0
+margin_bottom = 136.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseLacunarity"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "NoiseLacunarity"
+
+[node name="NoiseLacunarity" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseLacunarity"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 1000.0
+value = 2.0
+
+[node name="NoisePeriod" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 140.0
+margin_right = 268.0
+margin_bottom = 164.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoisePeriod"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "NoisePeriod"
+
+[node name="NoisePeriod" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoisePeriod"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 1000.0
+value = 80.0
+
+[node name="NoiseOctaves" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 268.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseOctaves"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "NoiseOctaves"
+
+[node name="NoiseOctaves" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoiseOctaves"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 1000.0
+value = 6.0
+
+[node name="NoisePersistence" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 196.0
+margin_right = 268.0
+margin_bottom = 220.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoisePersistence"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "NoisePersistence"
+
+[node name="NoisePersistence" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/NoisePersistence"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 1000.0
+step = 0.01
+value = 0.4
+
+[node name="Smooth" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 224.0
+margin_right = 268.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Smooth"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Smooth"
+
+[node name="Smooth" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Smooth"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+max_value = 1.0
+value = 1.0
+
+[node name="SeaLevel" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 252.0
+margin_right = 268.0
+margin_bottom = 276.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/SeaLevel"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "SeaLevel"
+
+[node name="SeaLevel" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/SeaLevel"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+min_value = -100.0
+value = -15.0
+
+[node name="TerrainShader" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 280.0
+margin_right = 268.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/TerrainShader"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "TerrainShader"
+
+[node name="TerrainShader" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/TerrainShader"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+min_value = 1.0
+max_value = 3.0
+value = 3.0
+
+[node name="WaterShader" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 308.0
+margin_right = 268.0
+margin_bottom = 332.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/WaterShader"]
+margin_top = 5.0
+margin_right = 112.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "WaterShader"
+
+[node name="WaterShader" type="SpinBox" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/WaterShader"]
+margin_left = 116.0
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 152, 0 )
+size_flags_horizontal = 0
+min_value = 1.0
+max_value = 2.0
+value = 1.0
+
+[node name="Button" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 336.0
+margin_right = 268.0
+margin_bottom = 350.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+text = "Generate"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Button" method="_on_Button_pressed"]

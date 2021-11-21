@@ -1,0 +1,92 @@
+[gd_resource type="VisualShader" load_steps=10 format=2]
+
+[sub_resource type="VisualShaderNodeInput" id=19]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeInput" id=1]
+input_name = "camera"
+
+[sub_resource type="VisualShaderNodeInput" id=2]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id=3]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=4]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
+default_input_values = [ 0, 0.0, 1, 200.0 ]
+operator = 3
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.0199005, 0.0597015, 0.119403, 0.139303 )
+colors = PoolColorArray( 0.643137, 0.517647, 0.258824, 1, 0.278431, 0.458824, 0.101961, 1, 0.282353, 0.282353, 0.282353, 1, 0.282353, 0.282353, 0.282353, 1, 0.772549, 0.772549, 0.772549, 1 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="VisualShaderNodeTexture" id=8]
+texture = SubResource( 7 )
+
+[resource]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
+uniform sampler2D tex_frg_7;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:2
+	mat4 n_out2p0 = CAMERA_MATRIX;
+
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+
+// TransformVectorMult:4
+	vec3 n_out4p0 = (n_out2p0 * vec4(n_out3p0, 1.0)).xyz;
+
+// VectorDecompose:5
+	float n_out5p0 = n_out4p0.x;
+	float n_out5p1 = n_out4p0.y;
+	float n_out5p2 = n_out4p0.z;
+
+// ScalarOp:6
+	float n_in6p1 = 200.00000;
+	float n_out6p0 = n_out5p1 / n_in6p1;
+
+// Texture:7
+	vec4 tex_frg_7_read = texture(tex_frg_7, vec3(n_out6p0).xy);
+	vec3 n_out7p0 = tex_frg_7_read.rgb;
+	float n_out7p1 = tex_frg_7_read.a;
+
+// Output:0
+	ALBEDO = n_out7p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+nodes/fragment/0/position = Vector2( 1320, 440 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( 140, 440 )
+nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/position = Vector2( 140, 520 )
+nodes/fragment/4/node = SubResource( 3 )
+nodes/fragment/4/position = Vector2( 320, 440 )
+nodes/fragment/5/node = SubResource( 4 )
+nodes/fragment/5/position = Vector2( 560, 440 )
+nodes/fragment/6/node = SubResource( 5 )
+nodes/fragment/6/position = Vector2( 780, 440 )
+nodes/fragment/7/node = SubResource( 8 )
+nodes/fragment/7/position = Vector2( 1100, 440 )
+nodes/fragment/15/node = SubResource( 19 )
+nodes/fragment/15/position = Vector2( 140, 600 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 4, 0, 3, 0, 4, 1, 4, 0, 5, 0, 5, 1, 6, 0, 6, 0, 7, 0, 7, 0, 0, 0 )
